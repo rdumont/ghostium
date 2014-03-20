@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}">
 
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -13,15 +14,35 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="description" content="{{meta_description}}">
+    <!-- Google Authorship and Publisher Markup -->
+    <link rel="author" href="https://plus.google.com/+RodrigoDumont0/posts"/>
+    <link rel="publisher" href="https://plus.google.com/+RodrigoDumont0"/>
 
+    <!--Google+ Schema.org meta-->
+    <meta itemprop="name" content="{{meta_title}}">
+    <meta itemprop="description" content="{{meta_description}}">
+    <meta itemprop="image" content="{{@blog.url}}{{@blog.logo}}">
+
+    <!-- Twitter meta -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{meta_title}}">
     <meta name="twitter:description" content="{{meta_description}}">
 
-    <meta property="og:type" content="article">
+    <!-- Facebook meta -->
+    <meta property="og:image" content="{{@blog.url}}{{@blog.logo}}">
+    <meta property="og:site_name" content="{{@blog.title}}">
     <meta property="og:title" content="{{meta_title}}">
     <meta property="og:description" content="{{meta_description}}">
+
+    {{#if post}}
+    {{#post}}
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{url absolute="true"}}">
+    {{/post}}
+    {{else}}
+    <meta property="og:type" content="blog">
+    <meta property="og:url" content="{{@blog.url}}">
+    {{/if}}
 
     {{> custom/meta this}}
 
@@ -31,9 +52,9 @@
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
     <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{asset 'css/b3a55bb9.main.min.css'}}"/>
+    <link rel="stylesheet" href="{{asset 'css/b56a347b.main.min.css'}}"/>
 
-    <script src="{{asset 'js/8fe6056b.head-scripts.min.js'}}"></script>
+    <script src="{{asset 'js/beb0e7a5.head-scripts.min.js'}}"></script>
 
     {{ghost_head}}
   </head>
@@ -54,7 +75,7 @@
 
     {{ghost_foot}}
 
-    <script src="{{asset 'js/56c2364f.foot-scripts.min.js'}}"></script>
+    <script src="{{asset 'js/5c0d6d04.foot-scripts.min.js'}}"></script>
 
     <script type="text/javascript">
       {{> custom/config}}
